@@ -39,7 +39,8 @@ function countLines(){
         var t = document.createTextNode(i+1);
         btn.id = "ID" + i;
         btn.className = i;
-        btn.style.color = i%2 ? 'green': 'red';
+        btn.style.color = i % 2 ? 'white': 'red';
+        btn.style.backgroundColor = i % 2 ? 'blue': 'black';
         btn.appendChild(t);
         document.body.appendChild(btn);
     }
