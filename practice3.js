@@ -2,7 +2,6 @@
 function JScriptVoorbeeld () {
 }
 
-
 function sayHello(name){
     const value = document.getElementById(name).getAttribute("value")
     if(value != null){
@@ -19,8 +18,16 @@ function forLoop(){
     };
 
 function Count(event){
-    console.log(event);
-    case
+    var Counting = document.getElementById("Count").innerHTML;
+    var NewCount = parseInt(Counting);
+
+    if(event === "+"){
+        NewCount += 1
+        
+    } else { NewCount -= 1}
+
+    document.getElementById("Count").innerHTML = NewCount;    
+    
 };
 
 function countLines(){
