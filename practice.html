@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vaak gebruikte Tags</title>
+        <link rel="stylesheet" href="./practice.css">
+    </head>
+    
+    <body>
+        <h1 id="header1" class="header">Header 1</h1>
+        <h2 id="header2" class="header">class="header"Header 2</h2>
+        <h3 id="header3" class="header">Header 3</h3>
+        <h4 id="header4" class="header">Header 4</h4>
+        <h5 id="header5" class="header">Header 5</h5>
+        <h6 id="header6" class="header">Header 6</h6>
+
+        <div>
+            <p>
+                Het logo van
+                <span style="color: coral; font-size: 200%">Young Colfield</span>
+                is
+                <img src="logo.svg" alt="Logog" height="42" width="42">
+                . Ga naar de site: <a href="https://youngcolfield.nl/" target="_blank">Young Colfield</a>
+                    
+            </p>        
+        </div>
+        
+        <style>
+            details {
+                
+                color: brown;
+            }
+            summary {
+                color: blue
+            }
+        </style>
+        <div>
+            <details>
+                <summary>
+                    Talent Program
+                </summary>
+                In ons Talent Program vervul je in twee jaar verschillende functies bij een breed pallet aan bedrijven.
+                Tijdens deze twee jaar krijg je intensieve persoonlijke begeleiding en een uitgebreid trainingsprogramma.
+                De trainingen doorloop je samen met je team bestaande uit 7 andere trainees, waar je een hechte band mee opbouwt!
+            </details>
+        </div>
+            
+        <style>
+            table, th , td {
+                border: 1px solid seagreen;
+                border-collapse: collapse;      
+                }
+            th {
+                background-color: blue;
+                color: aliceblue;
+            }
+            table tr:nth-child(even) {
+               background-color: #eee;
+            }
+            table tr:nth-child(odd) {
+               background-color: #fff;
+            }
+        </style>
+        <table>
+            <tr>
+                <th>Lijst 1</th>
+                <th>Lijst 2</th>
+                <th>Lijst 3</th>
+                <th>Lijst 4</th>
+            </tr>
+            <tr>
+                <td>
+                    <ol>
+                        <li>Koffie</li>
+                        <li>Thee</li>
+                        <li>Limonade</li>
+                    </ol>
+                </td>
+                <td>
+                    <ul>
+                        <li>Koffie</li>
+                        <li>Thee</li>
+                        <li>Limonade</li>
+                    </ul>
+                </td>
+                <td>
+                    <dl>
+                        <dt>Koffie</dt>
+                            <dd>Espresso</dd>
+                            <dd>Cappuccino</dd>
+                            <dd>Latte macchiato</dd>
+                            <dd>Lungo</dd>
+                        <dt>Thee</dt>
+                        <dt>limonade</dt>
+                            <dd>Cola</dd>
+                            <dd>Sinas</dd>
+                            <dd>Bitter lemon</dd>
+                    </dl>
+                </td>
+                <td>
+                    <select>
+                        <option value="koffie">Koffie</option>
+                        <option value="thee">Thee</option>
+                        <option value="limonade">Limonade</option>
+                    </select>               
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>Einde kolom1</td>
+                <td>Einde kolom2</td>
+                <td>Einde kolom3</td>
+                <td>Einde kolom4</td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <div>
+                <p>
+                        Lorem ipsum dolor sit amet, <b>consectetuer adipiscing elit</b>. Aenean commodo ligula eget dolor. Aenean massa.
+                        Cum sociis natoque penatibus et <i>magnis dis parturient montes</i>, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+                        pellentesque <u>eu, pretium quis</u>, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec,
+                        vulputate eget, arcu. In enim justo, rhoncus ut,  <sup>imperdiet a, venenatis</sup> vitae, justo. Nullam dictum felis
+                        eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean <sub>vulputate eleifend</sub> tellus. Aenean leo
+                        ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+                        Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
+                        Nam eget dui.
+                </p>
+        </div>
+
+        <br><hr><br>
+        <label>Datum:</label>
+        <input type="date" value="2018-10-04"/>
+        <textarea rows="4" cols="100">
+            Lorem ipsum dolor sit amet, <b>consectetuer adipiscing elit</b>. Aenean commodo ligula eget dolor. Aenean massa.
+            Cum sociis natoque penatibus et <i>magnis dis parturient montes</i>, nascetur ridiculus mus. Donec quam felis, ultricies nec,
+            pellentesque <u>eu, pretium quis</u>, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec,
+            vulputate eget, arcu. In enim justo, rhoncus ut,  <sup>imperdiet a, venenatis</sup> vitae, justo. Nullam dictum felis
+            eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean <sub>vulputate eleifend</sub> tellus. Aenean leo
+            ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+            Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
+            Nam eget dui.
+        </textarea>
+        <br><hr><br>
+        
+            
+    </body>
+</html>

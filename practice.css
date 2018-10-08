@@ -1,0 +1,13 @@
+.header{
+    border: 1px solid green;
+}
+
+#header1{
+    color: red;
+}
+#header2{
+    color: green;
+}
+#header3{
+    color: blue;
+}
