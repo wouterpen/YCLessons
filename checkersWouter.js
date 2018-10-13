@@ -26,12 +26,10 @@ function onLoad() {
         for (var j = 0; j <= 9; j++) {
             newColumn = document.createElement("td");
             newColumn.setAttribute("onclick", 'checkValue(this)')
-
             if (Board[i][j] == 1) {
                 childDiv = document.createElement('div');
                 childDiv.setAttribute("class", "checkers1");
                 newColumn.appendChild(childDiv);
-
             }
             if (Board[i][j] == 2) {
                 childDiv = document.createElement('div');
@@ -57,6 +55,7 @@ var selected = 1;
 var firstSelectedArray = [];
 var secondSelectedArray = [];
 var valueArray = [];
+var player = 1;
 
 function clearFields() {
     selected = 1;
@@ -84,34 +83,42 @@ function checkValue(x) {
         }
 
         else if (selected == 2) {
-
             secondSelectedArray.push(rowIndex);
             secondSelectedArray.push(columnIndex);
 
-            if (Math.abs(firstSelectedArray[0] - secondSelectedArray[0]) == 1
-                && Math.abs(firstSelectedArray[1] - secondSelectedArray[1]) == 1) {
+            if (
+                Math.abs(firstSelectedArray[0] - secondSelectedArray[0]) == 1 &&
+                Math.abs(firstSelectedArray[1] - secondSelectedArray[1]) == 1 &&
+                Board[secondSelectedArray[0]][secondSelectedArray[1]] == 0
+            ) {
                 valueArray.push(Board[rowIndex][columnIndex]);
                 Board[secondSelectedArray[0]][secondSelectedArray[1]] = valueArray[0];
                 Board[firstSelectedArray[0]][firstSelectedArray[1]] = valueArray[1];
-            } else {
-                if (Math.abs(firstSelectedArray[0] - secondSelectedArray[0]) == 2
-                    && Math.abs(firstSelectedArray[1] - secondSelectedArray[1]) == 2) {
-                    var averageFirstandSecondArrayRow = (firstSelectedArray[0] + secondSelectedArray[0]) / 2
-                    var averageFirstandSecondArrayRow2 = (firstSelectedArray[1] + secondSelectedArray[1]) / 2
-                    if (Board[averageFirstandSecondArrayRow][averageFirstandSecondArrayRow2] == 1 &&
-                        Board[firstSelectedArray[0]][firstSelectedArray[1]] == 2 ||
-                        Board[averageFirstandSecondArrayRow][averageFirstandSecondArrayRow2] == 2 &&
-                        Board[firstSelectedArray[0]][firstSelectedArray[1]] == 1) {
-                        Board[averageFirstandSecondArrayRow][averageFirstandSecondArrayRow2] = 0;
-                        Board[secondSelectedArray[0]][secondSelectedArray[1]] = valueArray[0];
-                        Board[firstSelectedArray[0]][firstSelectedArray[1]] = valueArray[1];
-                    };
-                }
-            }
-            clearFields()
+            } else if (
+                Math.abs(firstSelectedArray[0] - secondSelectedArray[0]) == 2 &&
+                Math.abs(firstSelectedArray[1] - secondSelectedArray[1]) == 2
+            ) {
+                var averageFirstandSecondArrayRow = (firstSelectedArray[0] + secondSelectedArray[0]) / 2
+                var averageFirstandSecondArrayRow2 = (firstSelectedArray[1] + secondSelectedArray[1]) / 2
+                if (Board[averageFirstandSecondArrayRow][averageFirstandSecondArrayRow2] == 1 &&
+                    Board[firstSelectedArray[0]][firstSelectedArray[1]] == 2 &&
+                    Board[secondSelectedArray[0]][secondSelectedArray[1]] != 1 &&
+                    Board[secondSelectedArray[0]][secondSelectedArray[1]] != 2 ||
+                    Board[averageFirstandSecondArrayRow][averageFirstandSecondArrayRow2] == 2 &&
+                    Board[firstSelectedArray[0]][firstSelectedArray[1]] == 1 &&
+                    Board[secondSelectedArray[0]][secondSelectedArray[1]] != 1 &&
+                    Board[secondSelectedArray[0]][secondSelectedArray[1]] != 2
+
+                ) {
+                    Board[averageFirstandSecondArrayRow][averageFirstandSecondArrayRow2] = 0;
+                    Board[secondSelectedArray[0]][secondSelectedArray[1]] = valueArray[0];
+                    Board[firstSelectedArray[0]][firstSelectedArray[1]] = valueArray[1];
+                };
+            };
+            clearFields();
             onload();
         };
-    }
+    };
 };
 
 
