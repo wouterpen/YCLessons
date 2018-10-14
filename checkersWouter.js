@@ -47,6 +47,12 @@ function onLoad() {
         table.setAttribute('id', 'table');
         table.appendChild(newRow);
         div.appendChild(table);
+
+        if(!player){
+            document.getElementById("player").innerHTML = "it's player greys turn";
+        } else if (player){
+            document.getElementById("player").innerHTML = "it's player golds turn";
+        }
     };
 
 }
@@ -55,7 +61,7 @@ var selected = 1;
 var firstSelectedArray = [];
 var secondSelectedArray = [];
 var valueArray = [];
-var player = 1;
+var player = true;
 
 function clearFields() {
     selected = 1;
@@ -75,16 +81,31 @@ function checkValue(x) {
         clearFields()
     }
     else {
+
         if (selected == 1) {
             firstSelectedArray.push(rowIndex);
             firstSelectedArray.push(columnIndex);
-            valueArray.push(Board[rowIndex][columnIndex]);
-            selected += 1
-        }
+            if (player && Board[firstSelectedArray[0]][firstSelectedArray[1]] == 1) {
+                valueArray.push(Board[rowIndex][columnIndex]);
+                selected += 1
+                player = false;
 
+            }  else if (!player && Board[firstSelectedArray[0]][firstSelectedArray[1]] == 2) {
+                valueArray.push(Board[rowIndex][columnIndex]);
+                selected += 1
+                player = true;
+            } else {
+                clearFields();
+                alert("it's not your turn");
+            }
+        }
         else if (selected == 2) {
             secondSelectedArray.push(rowIndex);
             secondSelectedArray.push(columnIndex);
+
+            if(firstSelectedArray[0] == secondSelectedArray[0] && firstSelectedArray[1] == secondSelectedArray[1]){
+                player = !player
+            } else {
 
             if (
                 Math.abs(firstSelectedArray[0] - secondSelectedArray[0]) == 1 &&
@@ -115,6 +136,9 @@ function checkValue(x) {
                     Board[firstSelectedArray[0]][firstSelectedArray[1]] = valueArray[1];
                 };
             };
+
+            };
+
             clearFields();
             onload();
         };

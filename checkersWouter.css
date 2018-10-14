@@ -1,7 +1,6 @@
 tr{
     height: 70px;
     width: 50px;
-    /* background-color: black;  */
 }
 
 td{
@@ -17,9 +16,10 @@ white{
 }
 
 table{
+    margin-left: 500px;
     width: 800px;
     height: 800px;
-    border: 1px solid black;
+    border: 40px solid darkgoldenrod;
     background-color: white;
 }
 
@@ -29,8 +29,8 @@ table{
 	width: 54px;
 	height: 54px;
     border-radius: 50%;
-    background-color: grey;
-	border: 4px solid white;
+    background-color: goldenrod;
+	border: 4px solid gold;
 	cursor: pointer;	
 }
 
@@ -40,11 +40,16 @@ table{
 	width: 54px;
 	height: 54px;
     border-radius: 50%;
-    background-color: white;
-	border: 4px solid grey;
+    background-color: lightslategrey;
+	border: 4px solid gold;
 	cursor: pointer;	
 }
 
 .selected{
     background-color: lightblue;
 }
+
+#main{
+    text-align: center;
+}
+
